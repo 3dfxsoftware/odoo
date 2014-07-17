@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_serverclosing">
+    <t t-call="report.html_container">
+            <div class="page">
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Server Closing</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Server</td>
+                            <td><span t-esc="data['form']['user_id'][1]"/></td>
+                        </tr>
+                        <tr>
+                            <td>Terminal #</td>
+                            <td><span t-esc="get_user_terminal(data['form'])"/></td>
+                        </tr>
+                        <tr>
+                            <td>Report date</td>
+                            <td><span t-esc="data['form']['date_start']"/> - <span t-esc="data['form']['date_end']"/></td>
+                        </tr>
+                        <tr>
+                            <td>Sales</td>
+                            <td><span t-esc="get_user_sales(data['form'])"/></td>
+                        </tr>
+                        <tr>
+                            <td>Taxes</td>
+                            <td><span t-esc="get_user_taxes(data['form'])"/></td>
+                        </tr>
+                        <tr>
+                            <td>Gratuities</td>
+                            <td><span t-esc="get_user_gratuities(data['form'])"/></td>
+                        </tr>
+                        <tr>
+                            <td>Grats as % of Sales</td>
+                            <td><span t-esc="get_user_gratuities_perc(data['form'])"/>%</td>
+                        </tr>
+                        <tr>
+                            <td># of Tables</td>
+                            <td><span t-esc="get_user_number_of_tables(data['form'])"/></td>
+                        </tr>
+                        <tr>
+                            <td># of Covers</td>
+                            <td><span t-esc="get_user_number_of_covers(data['form'])"/></td>
+                        </tr>
+                        <tr>
+                            <td>Average Check</td>
+                            <td><span t-esc="get_user_average_check(data['form'])"/></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Payment Method</th>
+                            <th>Quantity of Checks</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="get_user_method_payments(data['form'])" t-as="paymentline">
+                            <td><t t-esc="paymentline['name']"/></td>
+                            <td><t t-esc="paymentline['counter']"/></td>
+                            <td><t t-esc="paymentline['amount']"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </t>
+</template>
+</data>
+</openerp>

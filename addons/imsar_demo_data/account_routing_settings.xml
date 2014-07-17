@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Allow account routing for certain account types -->
+        <record id="imsar_accounting.user_type_eng_revenue" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_product_sales" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_parts_sales" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_product_leases" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="l10n_us.user_type_other_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_labor_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_material_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_travel_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_subcontractor_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_equipment_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+        <record id="imsar_accounting.user_type_fees_expense" model="account.account.type">
+            <field name="allow_routing">True</field>
+        </record>
+
+        <!-- Set timesheet routing for these routings (must be done after everything else is loaded) -->
+        <record id="contract_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('contract_labor_routing_line')" />
+        </record>
+        <record id="irad_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('irad_labor_routing_line')" />
+        </record>
+        <record id="eng_dloh_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('eng_dloh_labor_routing_line')" />
+        </record>
+        <record id="commercial_dloh_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('comm_dloh_labor_routing_line')" />
+        </record>
+        <record id="deployment_dloh_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('depl_dloh_labor_routing_line')" />
+        </record>
+        <record id="mfg_dloh_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('mfg_dloh_labor_routing_line')" />
+        </record>
+        <record id="gna_expenses_routing" model="account.routing">
+            <field name="timesheet_routing_line" eval="ref('gna_labor_routing_line')" />
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_sales_order_group_by_visit" model="ir.ui.view">
+            <field name="name">sale.order.list.select</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="/search/group/filter[@string='Order Date']" position="after">
+                    <filter string="Visit" icon="terp-personal" domain="[]" context="{'group_by':'group_description'}"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_invoice_group_by_visit" model="ir.ui.view">
+            <field name="name">account.invoice.select</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="/search/group/filter[@string='Due Date']" position="after">
+                    <filter string="Visit" icon="terp-personal" domain="[]" context="{'group_by':'group_description'}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_with_visit" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="/tree/field[@name='state']" position="after">
+                    <field name="group_description"/>
+                    <!--<field name="group_id" string="Visit" invisible ="True"/>-->
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_tree_with_visit" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <xpath expr="/tree/field[@name='state']" position="after">
+                    <field name="group_description"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!--<record id="invoice_tree_with_visit" model="ir.ui.view">-->
+            <!--<field name="name">account.invoice.tree</field>-->
+            <!--<field name="model">account.invoice</field>-->
+            <!--<field name="inherit_id" ref="account.invoice_tree"/>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<xpath expr="/tree/field[@name='state']" position="after">-->
+                    <!--<field name="group_description"/>-->
+                <!--</xpath>-->
+            <!--</field>-->
+        <!--</record>-->
+
+    </data>
+</openerp>

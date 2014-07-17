@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+	<record model="ir.ui.view" id="view_scrum_sandbox_to_backlog">
+            <field name="name">project.scrum.sandbox.to.backlog.form</field>
+            <field name="model">project.scrum.sandbox.to.backlog</field>
+            <field name="arch" type="xml">
+                <form string="Transfer to backlog" version="7.0">
+                    <footer>
+                        <button name="do_transfer" string="_Transfer" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                    <separator colspan="4" string="What is the release for this backlog ?" />
+                    <group>
+						<field name="release_id" context="{'default_project_id':project_id}"/>
+                        <field name="priority_id"/>
+                        <field name="acceptance_testing"/>
+                        <field name="project_id" invisible="1"/>
+                        <field name="for_then" invisible="1"/>
+                        <field name="name" invisible="1"/>
+                        <field name="role_id" invisible="1"/>
+                        <field name="developer_id" invisible="1"/>
+                    </group>           
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_scrum_sandbox_to_backlog">
+            <field name="name">Transfer to sandbox</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.scrum.sandbox.to.backlog</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view" ref="view_scrum_sandbox_to_backlog"/>
+            <field name="multi">True</field>
+        </record>
+
+        <record model="ir.values" id="scrum_sandbox_to_backlog_values">
+            <field name="model_id" ref="model_project_scrum_sandbox" />
+            <field name="name">Transfer to sandbox</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('action_scrum_sandbox_to_backlog'))" />
+            <field name="key">action</field>
+            <field name="model">project.scrum.sandbox</field>
+        </record>
+        
+    </data>
+</openerp>

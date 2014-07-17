@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE document SYSTEM "rml.dtd">
+<document filename="claim.pdf">
+    <template showBoundary="1">
+        <pageTemplate id="main">
+            <frame id="first" x1="15" y1="42" width="539" height="758" />
+        </pageTemplate>
+	</template>
+	<stylesheet>
+		<blockTableStyle id="Standard_Outline">
+		  <blockAlignment value="LEFT"/>
+		  <blockValign value="TOP"/>
+		</blockTableStyle>
+		<blockTableStyle id="Table1">
+		  <blockAlignment value="LEFT"/>
+		  <blockValign value="TOP"/>
+		</blockTableStyle>
+		<blockTableStyle id="TableEmployee">
+		  <blockAlignment value="LEFT"/>
+		  <blockValign value="TOP"/>
+		  <blockBackground start="0,0" stop="3,0" colorName="gray"/>
+		  <lineStyle colorName="black" kind="GRID" start="0,0" stop="-1,-1" thickness="1"/>
+		  <blockSpan start="0,2" stop="3,2"/>
+		</blockTableStyle>
+		<initialize>
+		  <paraStyle name="all" alignment="justify"/>
+		</initialize>
+		<paraStyle name="Header" fontName="Helvetica" fontSize="14.0" alignment="CENTER" textColor="red" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+		<paraStyle name="Caption" fontName="Helvetica" fontSize="12.0" leading="15" spaceBefore="6.0" spaceAfter="6.0"/>
+		<paraStyle name="Standard" fontName="Helvetica"/>
+		<paraStyle name="Preformatted Text" fontName="Helvetica" fontSize="10.0" leading="13" spaceBefore="0.0" spaceAfter="0.0"/>
+		<paraStyle name="terp_default_Centre_9_Bold" fontName="Helvetica-Bold" fontSize="9.0" leading="11" alignment="CENTER" spaceBefore="0.0" spaceAfter="0.0"/>
+		<images/>
+  </stylesheet>
+  <story>
+		<para style="Header">
+			劳保用品领用清单
+		</para>
+		<pto>
+			<para style="terp_default_8">[[repeatIn(objects,'o')]]</para>
+			<!--<para style="terp_default_8">[[ setLang(o.partner_id.lang) ]]</para>-->
+			<blockTable colWidths="200.0,100.0,100.0,120.0" style="TableEmployee">
+				<tr>
+					<td><para style="Caption">员工名称</para> </td> 
+					<td><para style="Caption">共需分值</para> </td>
+					<td><para style="Caption">操作人</para> </td>
+					<td><para style="Caption">操作时间</para> </td>
+				</tr> 
+				<tr>
+					<td><para>[[ o.name ]]</para></td>
+					<td><para>[[ o.totalscore ]]</para></td>
+					<td><para>[[ o.adduser_id.name ]]</para></td>  
+					<td><para>[[ o.addtime ]]</para></td>  
+				</tr>
+				<tr>
+					<td colspan="4">
+						<blockTable>
+							<tr>
+								<td><para>产品名称</para></td>
+								<td><para>产品价格</para></td>
+								<td><para>当前库存</para></td>
+								<td><para>领用数量</para></td>
+							</tr>
+							<tr>[[repeatIn(o['claimitem_ids'],'a','tr')]]							
+								<td><para> [[a.name]] </para></td>
+								<td>[[a.price]]</td>
+								<td>[[a.score]]</td>
+								<td>[[a.outcount]]</td>
+							</tr>
+						</blockTable>
+					</td>
+				</tr>
+			</blockTable>
+		</pto>
+  </story>
+</document>

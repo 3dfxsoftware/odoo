@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record model="product.category" id="product_category_ayurvedic">
+            <field name="name">Ayurvedic</field>
+            <field name="parent_id" search="[('name', '=', 'Saleable')]"></field>
+        </record>
+
+        <record model="product.category" id="product_category_consumables">
+            <field name="name">Consumable</field>
+            <field name="parent_id" search="[('name', '=', 'Saleable')]"></field>
+        </record>
+
+        <record model="product.category" id="product_category_food_supplement">
+            <field name="name">Food Supplement</field>
+            <field name="parent_id" search="[('name', '=', 'Saleable')]"></field>
+        </record>
+
+        <!--  All products > Saleable > Drugs -->
+        <record model="product.category" id="product_category_drug">
+            <field name="name">Drug</field>
+            <field name="parent_id" search="[('name', '=', 'Saleable')]"></field>
+        </record>
+
+        <record model="product.category" id="product_category_drug_tablet">
+            <field name="name">Tablet</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_capsule">
+            <field name="name">Capsule</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_injection">
+            <field name="name">Injection</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_inhaler">
+            <field name="name">Inhaler</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_syrup">
+            <field name="name">Syrup</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_pessary">
+            <field name="name">Pessary</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_cream">
+            <field name="name">Cream</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_drops">
+            <field name="name">Drops</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_solution">
+            <field name="name">Solution</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_gel">
+            <field name="name">Gel</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_lotion">
+            <field name="name">Lotion</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_powder">
+            <field name="name">Powder</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_ointment">
+            <field name="name">Ointment</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_jelly">
+            <field name="name">Jelly</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_spray">
+            <field name="name">Spray</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+        <record model="product.category" id="product_category_drug_liquid">
+            <field name="name">Liquid</field>
+            <field name="parent_id" ref="product_category_drug"></field>
+        </record>
+
+        <!-- All products > Services -->
+        <record model="product.category" id="product_category_services">
+            <field name="name">Services</field>
+            <field name="parent_id" search="[('name', '=', 'All products')]"></field>
+        </record>
+
+        <record model="product.category" id="product_category_services_ipd">
+            <field name="name">IPD</field>
+            <field name="parent_id" ref="product_category_services"></field>
+        </record>
+        <record model="product.category" id="product_category_services_lab">
+            <field name="name">Lab</field>
+            <field name="parent_id" ref="product_category_services"></field>
+        </record>
+        <record model="product.category" id="product_category_services_radiology">
+            <field name="name">Radiology</field>
+            <field name="parent_id" ref="product_category_services"></field>
+        </record>
+        <record model="product.category" id="product_category_services_ot">
+            <field name="name">OT</field>
+            <field name="parent_id" ref="product_category_services"></field>
+        </record>
+    </data>
+</openerp>

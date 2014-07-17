@@ -1,0 +1,10 @@
+.pos .paypad button.disabled{
+	opacity:0.5;
+}
+
+.pos #current_debt.positive{
+	color: red;
+}
+.pos #current_debt.negative{
+	color: green;
+}

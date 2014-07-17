@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1:
+-->
+<templates>
+<t t-name="web_calculator.Calculator">
+    <div title='Calculator' class="oe_systray_calculator">
+        <button class="oe_systray_calculator"></button>
+    </div>
+</t>
+</templates>

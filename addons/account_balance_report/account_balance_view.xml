@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+       <menuitem icon="STOCK_PRINT" name="Account Balance" action="action_account_balance_report" id="menu_account_balance_report" parent="account.final_accounting_reports" sequence="105"/>
+	
+    </data>
+</openerp>

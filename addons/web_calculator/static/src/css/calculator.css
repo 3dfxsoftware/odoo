@@ -1,0 +1,95 @@
+.oe_systray_calculator {
+ padding: 0px;
+    width: 32px;
+    height: 32px;
+    color: #eee;
+}
+
+.oe_systray_calculator:hover{
+ padding: 0px;
+    width: 32px;
+    height: 32px;
+    background-color: #323232;
+}
+
+.oe_systray_calculator button{
+    position: relative;
+    top: 0px;  /* centering entypo ... urgh */
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    color: white;
+    background: url(/web_calculator/static/src/img/calculator.png) no-repeat center center;
+    text-shadow: 0px 1px 2px black;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    margin: 0px
+    border-radius: 0px;
+}
+
+.oe_systray_calculator button:active{
+    position: relative;
+    top: 0px;  /* centering entypo ... urgh */
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    color: white;
+    background: url(/web_calculator/static/src/img/calculator.png) no-repeat center center;
+    text-shadow: 0px 1px 2px black;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    margin: 0px
+    border-radius: 0px;
+}
+
+.oe_systray_calculator button:focus{
+    position: relative;
+    top: 0px;  /* centering entypo ... urgh */
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    color: white;
+    background: url(/web_calculator/static/src/img/calculator.png) no-repeat center center;
+    text-shadow: 0px 1px 2px black;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    margin: 0px
+    border-radius: 0px;
+}
+
+.oe_systray_calculator button:disabled{
+    position: relative;
+    top: 0px;  /* centering entypo ... urgh */
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    color: white;
+    background: url(/web_calculator/static/src/img/calculator.png) no-repeat center center;
+    text-shadow: 0px 1px 2px black;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    margin: 0px
+    border-radius: 0px;
+}
+
+.oe_systray_calculator button:hover{
+    position: relative;
+    top: 0px;  /* centering entypo ... urgh */
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    color: white;
+    background: url(/web_calculator/static/src/img/calculator.png) no-repeat center center;
+    text-shadow: 0px 1px 2px black;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    margin: 0px
+    border-radius: 0px;
+}
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<openerp>
+    <data>
+    
+    	<report
+            id="account_balance_report_wizard"
+            string="Account Balance Report"
+            model="accounting.balance.report"
+            name="account.balance.report.wizard"
+            auto="False"
+            multi="True"
+            menu="False"
+            rml="foss_account_balance_report/report/account_balance_report.rml"/>
+             
+     </data>
+</openerp>

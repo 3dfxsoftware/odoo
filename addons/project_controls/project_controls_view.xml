@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data> 
+        <record id="task_fields_clear" model="ir.ui.view">
+            <field name="name">task.fields.clear</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project_gtd.project_task"/>
+            <field name="arch" type="xml">
+  		        <field  name="context_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+  		        </field>
+              <field  name="timebox_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+              </field>
+            </field>
+        </record>
+
+        <record id="task_fields_required" model="ir.ui.view">
+            <field name="name">task.fields.required</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+              <group string="Gantt View" position="replace"/>
+              <field  name="project_id" position="attributes">
+                <attribute name="required">1</attribute>
+              </field>
+              <field  name="planned_hours" position="attributes">
+                <attribute name="required">1</attribute>
+              </field>
+	      <field  name="date_deadline" position="before">
+                <field name="date_start" required="1"/>
+                <field name="date_end" required="1"/>
+              </field>
+              <field  name="date_deadline" position="attributes">
+                <attribute name="invisible">1</attribute>
+              </field>
+              <field  name="user_id" position="attributes">
+                <attribute name="required">1</attribute>
+              </field>
+<!--               <field  name="categ_ids" position="after">
+                <field name="task_type"></field>
+              </field> -->
+            </field>
+        </record>
+
+	<record id="task_fields_list_view" model="ir.ui.view">
+            <field name="name">task.fields.list.view</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_tree2"/>
+            <field name="arch" type="xml">
+            	<field name="remaining_hours" position="after">
+                    <field string="Start Date" name="date_start"></field>
+                    <field string="End Date" name="date_end"></field>
+      	    	</field>
+            </field>
+        </record>
+      </data>
+</openerp>
+
+       
